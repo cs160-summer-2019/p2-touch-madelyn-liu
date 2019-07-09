@@ -84,7 +84,65 @@
 		</div>
 	</div>
 	<script>
-	  // your solution here
+    
+    
+    
+	  var rotateElement = document.getElementById('rotate-box');
+    var rotateHam = new Hammer(rotateElement);
+    rotateHam.add([new Hammer.Rotate()]);
+    rotateHam.on("rotate", function(ev) {
+      alert('Botate!');
+      rotateElement.style.backgroundColor = 'red';
+      });
+    
+    
+    var pinchElement = document.getElementById('pinch-box');
+    var pinchHam = new Hammer(pinchElement);
+    pinchHam.add([new Hammer.Pinch()]);
+    pinchHam.on("pinch", function(ev) {
+      alert('Binch!');
+      pinchElement.style.backgroundColor = 'purple';
+      });
+    
+    
+    var pressElement = document.getElementById('press-box');
+    var pressHam = new Hammer(pressElement);
+    pressHam.on("press", function(ev) {
+      alert('Bress!');
+      pressElement.style.backgroundColor = 'silver';
+    });
+    
+    
+    var panElement = document.getElementById('pan-box');
+    var panHam = new Hammer(panElement);
+    panHam.on("pan", function(ev) {
+      alert('Banboras Box!');
+      panElement.style.backgroundColor = 'gold';
+    });
+      
+    
+    var tapElement = document.getElementById('tap-box');
+    var tapHam = new Hammer(tapElement);
+    tapHam.on("tap", function(ev) {
+      alert('Bap!');
+      tapElement.style.backgroundColor = 'green'; 
+    });
+    
+    var swipeElement = document.getElementById('swipe-box');
+    var swipeHam = new Hammer(swipeElement);
+    swipeHam.on("swipe", function(ev) {
+      alert('dont swipe');
+      swipeElement.style.backgroundColor = 'orange';
+    });
+     
+    
+      
+//     hammertime.get('pinch').set({ enable: true });
+//     hammertime.get('rotate').set({ enable: true });
+//     hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+//     hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+      
+
   </script>
 </body>
 </html>
